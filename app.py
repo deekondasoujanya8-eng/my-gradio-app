@@ -127,4 +127,9 @@ with gr.Blocks(title="Wireless Signal Propagation & Statistical Analysis") as de
     )
 
 # Launch in Colab with share=True to generate a temporary public link
-demo.launch()
+import os
+
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
